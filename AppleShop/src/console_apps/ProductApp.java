@@ -21,7 +21,7 @@ public class ProductApp {
 		System.out.println(" Enter the original price:");
 		double op = input.nextDouble();
 		Product p3 = new Product(model, op);
-		System.out.println(p3);
+ 		System.out.println(p3);
 		
 		input.close();
 		
