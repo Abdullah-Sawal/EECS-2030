@@ -14,7 +14,7 @@ public class TestProduct {
 
 		Product p = new Product();
 
-		assertNull(p.getmodel());
+		assertNull(p.getModel());
 
 		assertTrue(p.getFinish()== null);
 		assertFalse(p.getFinish()!= null);
@@ -29,7 +29,7 @@ public class TestProduct {
 
 		assertEquals(0.0, p.getOriginalPrice(), 0.1);
 		assertEquals(0.0, p.getDiscountValue(), 0.1);
-		assertEquals(0.0, p.getprice(), 0.1);
+		assertEquals(0.0, p.getPrice(), 0.1);
 
 		assertEquals("null null 0GB (cellular connectivity: false): $(0.00 - 0.00)", p.toString());
 
@@ -41,9 +41,9 @@ public class TestProduct {
 
 		Product p = new Product(new String("iPad Pro 12.9"), 1709.00);
 
-		assertNotNull(p.getmodel());
-		assertEquals("iPad Pro 12.9", p.getmodel());
-		assertTrue(p.getmodel().equals("iPad Pro 12.9"));
+		assertNotNull(p.getModel());
+		assertEquals("iPad Pro 12.9", p.getModel());
+		assertTrue(p.getModel().equals("iPad Pro 12.9"));
 //      assertTrue(p.getmodel() == "iPad Pro 12.9");
 		
 
@@ -60,7 +60,7 @@ public class TestProduct {
 
 		assertEquals(1709.00, p.getOriginalPrice(), 0.1);
 		assertEquals(0.0, p.getDiscountValue(), 0.1);
-		assertEquals(1709.00, p.getprice(), 0.1);
+		assertEquals(1709.00, p.getPrice(), 0.1);
 
 		assertEquals("iPad Pro 12.9 null 0GB (cellular connectivity: false): $(1709.00 - 0.00)", p.toString());
 
@@ -72,9 +72,9 @@ public class TestProduct {
 
 		Product p = new Product(new String("iPad Pro 12.9"), 1709.00);
 
-		assertNotNull(p.getmodel());
-		assertEquals("iPad Pro 12.9", p.getmodel());
-		assertTrue(p.getmodel().equals("iPad Pro 12.9"));
+		assertNotNull(p.getModel());
+		assertEquals("iPad Pro 12.9", p.getModel());
+		assertTrue(p.getModel().equals("iPad Pro 12.9"));
 //      assertTrue(p.getmodel() == "iPad Pro 12.9");
 		
         p.setFinish("Space Grey");
@@ -96,7 +96,7 @@ public class TestProduct {
 		p.setDiscountValue(220.00);
 		assertEquals(1709.00, p.getOriginalPrice(), 0.1);
 		assertEquals(220.00, p.getDiscountValue(), 0.1);
-		assertEquals(1489.00, p.getprice(), 0.1);
+		assertEquals(1489.00, p.getPrice(), 0.1);
 
 		assertEquals("iPad Pro 12.9 Space Grey 1000GB (cellular connectivity: true): $(1709.00 - 220.00)", p.toString());
 

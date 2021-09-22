@@ -27,11 +27,11 @@ public class Product {
 	
 	// accessors and mutators 
 	
-	public String getmodel() {
+	public String getModel() {
 		return this.model;
 	}
 	
-	public void setmodel(String model) {
+	public void setModel(String model) {
 	 this.model = model;
 	}
 
@@ -75,7 +75,7 @@ public class Product {
 		this.discountValue = discountValue;
 	}
 	
-	public double getprice() {
+	public double getPrice() {
 		double price = 0.0;
 				
 		 price = this.originalPrice - this.discountValue;

@@ -37,7 +37,7 @@ public class Entry {
 	}
 	
 	public String toString() {
-		return "[" + this.serialNumber + "]" + this.product.toString();
+		return "[" + this.serialNumber + "]" + " " + this.product.toString();
 	}
 	
 	
