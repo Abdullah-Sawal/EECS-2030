@@ -175,7 +175,7 @@ public class App {
 				avgS = this.getFormatedAvg();
 			}
 	
-		return String.format("%s (Current Version: %s; Average Rating: n/a)"
+		return String.format("%s (Current Version: %s; Average Rating: %s)"
 				, this.name, this.getWhatIsNew().toString(), avgS);
 
 	}

@@ -278,7 +278,7 @@ public class StarterTests {
 		app.submitRating(4);
 		assertEquals("Average of 3 ratings: 3.7 (Score 5: 0, Score 4: 2, Score 3: 1, Score 2: 0, Score 1: 0)", app.getRatingReport());
 				
-	//	assertEquals("GoodNotes 5 (Current Version: Version 5.7.31 contains 3 fixes [Better logging, Improved performance, Stability improvements]; Average Rating: 3.7)", app.toString());
+		assertEquals("GoodNotes 5 (Current Version: Version 5.7.31 contains 3 fixes [Better logging, Improved performance, Stability improvements]; Average Rating: 3.7)", app.toString());
 	}
 	
 	/*

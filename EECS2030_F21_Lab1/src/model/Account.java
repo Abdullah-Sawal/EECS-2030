@@ -101,68 +101,71 @@ public class Account {
 			if ( this.namesOfDownloadedApps[i].equals(nameOfApp)) {
 				nameExists = true;
 
-			}
+
+				if( nameExists ) {
+
+
+					namesOfDownloadedApps[i] = null;
+
+					namesOfDownloadedApps[i] = namesOfDownloadedApps[i+1];
+					namesOfDownloadedApps[this.noa] = null;
+					this.noa --;
+
+				}
+			} 
 		}
-
-		if (nameExists) {
-
-			for ( int i = 0; i < this.noa; i++) {
-
-				namesOfDownloadedApps[i] = namesOfDownloadedApps[i+1];
-				namesOfDownloadedApps[this.noa] = null;
-				this.noa --;
-				
-			}
-				this.status = String.format("%s is successfully uninstalled for %s.",
-						nameOfApp, this.name);
-
-			}
-
-			else {
-
-				this.status = String.format("Error: %s has not been downloaded for %s.",
-						nameOfApp, this.name);
-			}
-		}
-
-		public String[] getNamesOfDownloadedApps() {
-
-			String[] names = new String[this.noa];
-
-			for ( int i = 0; i< this.noa; i++) {
-
-				names[i] = namesOfDownloadedApps[i];
-			}
-			return names;
-		}
-
-		public App[] getObjectsOfDownloadedApps() {
-
-			App[] apps = new App[this.noa];
-
-			for (int i = 0; i < this.noa; i++) {
-
-				String nameOfApp = this.namesOfDownloadedApps[i];
-				App app = this.getApp(nameOfApp);
-				apps[i] = app;
-
-			}
-
-			return apps;
-
+		if(nameExists) {
+			this.status = String.format("%s is successfully uninstalled for %s.",
+					nameOfApp, this.name);
 
 		}
 
-		private App getApp(String nameOfApp) {
+		else {
 
-			return this.store.getApp(nameOfApp);
+			this.status = String.format("Error: %s has not been downloaded for %s.",
+					nameOfApp, this.name);
 		}
+	}
 
 
+public String[] getNamesOfDownloadedApps() {
 
-		public String toString() {
-			return this.status;
+	String[] names = new String[this.noa];
 
-		}
+	for ( int i = 0; i< this.noa; i++) {
+
+		names[i] = namesOfDownloadedApps[i];
+	}
+	return names;
+}
+
+public App[] getObjectsOfDownloadedApps() {
+
+	App[] apps = new App[this.noa];
+
+	for (int i = 0; i < this.noa; i++) {
+
+		String nameOfApp = this.namesOfDownloadedApps[i];
+		App app = this.getApp(nameOfApp);
+		apps[i] = app;
 
 	}
+
+	return apps;
+
+
+}
+
+private App getApp(String nameOfApp) {
+
+	return this.store.getApp(nameOfApp);
+}
+
+
+
+public String toString() {
+	return this.status;
+
+}
+
+}
