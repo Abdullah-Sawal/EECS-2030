@@ -7,6 +7,7 @@ import model.HealthRecord;
 import model.VaccinationSite;
 import model.UnrecognizedVaccineCodeNameException;
 import model.TooMuchDistributionException;
+import model.InsufficientVaccineDosesException;
 
 import org.junit.Test;
 

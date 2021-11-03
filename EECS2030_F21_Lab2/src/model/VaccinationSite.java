@@ -1,7 +1,5 @@
 package model;
 
-
-
 public class VaccinationSite {
 
 	private String siteName;
@@ -20,6 +18,9 @@ public class VaccinationSite {
 
 	private String[] data;
 	private int nor;
+	
+	private HealthRecord[] appointments;
+	private int noa;
 
 
 	public VaccinationSite(String siteName, int limitOfDoses) {
@@ -29,6 +30,8 @@ public class VaccinationSite {
 		this.counter =0;
 		this.nor =0;
 		data = new String[limitOfDoses];
+		
+		this.appointments = new HealthRecord[200];
 	}
 
 
@@ -126,23 +129,23 @@ public class VaccinationSite {
 		return this.noDoses;
 	}
 
-	public int getNumberOfAvailableDoses(String codeName) {
+	public int getNumberOfAvailableDoses(String s) {
 		int total = 0;
 
-		if(codeName.equals("mRNA-1273")) {
+		if(s.equals("mRNA-1273")) {
 
 			total = this.noModerna;
 		}
 
-		if(codeName.equals("BNT162b2")) {
+		if(s.equals("BNT162b2")) {
 
 			total = this.noPfizer;
 		}
-		if(codeName.equals("AZD1222")) {
+		if(s.equals("AZD1222")) {
 
 			total = this.noAstra;
 		}
-		if(codeName.equals("Ad26.COV2.S")) {
+		if(s.equals("Ad26.COV2.S")) {
 
 			total = this.noJansen;
 		}
@@ -156,9 +159,34 @@ public class VaccinationSite {
 		}
 		return results;
 	}
-
-
+	
+	
+   public void bookAppointment(HealthRecord name) throws InsufficientVaccineDosesException {
+	 
+	if( this.noa > 200) {
+		
+		throw new InsufficientVaccineDosesException("Max number of appointments");
+	}
+	
+	else {
+		
+		this.appointments[this.noa] = name;
+		this.noa++;
+		
+	}
 }
+	
+	public void administer(String date) {
+		
+	}
+	
+	public int getCount() {
+		return this.noa;
+		
+	}
+		
+}
+
 
 
 
