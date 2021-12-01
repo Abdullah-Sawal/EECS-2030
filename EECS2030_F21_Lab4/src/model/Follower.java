@@ -13,7 +13,8 @@ public class Follower {
 	
 	protected String type;
 
-	private int maxFollow;
+	private int maxFollow; 
+	
 
 
 	public Follower(String name, int MAX_FOLLOW) {
@@ -26,6 +27,7 @@ public class Follower {
 		this.maxFollow = MAX_FOLLOW;
 		
 		this.type = "Monitor";
+		
 
 	}
 
@@ -60,6 +62,11 @@ public class Follower {
 		return this.name;
 
 	}
+	
+	public void update (String name, int watchTime) {
+		
+		
+	}
 
 
 	public String getRecommendedVideos() {
@@ -89,7 +96,7 @@ public class Follower {
 
 
 	}
-
+	
 	public String getChannels() {
 
 		String s = "";

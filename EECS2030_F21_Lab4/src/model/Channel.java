@@ -31,7 +31,22 @@ public class Channel {
 		return this.name;
 
 	}
-
+	
+	public int getnof() {
+		
+		return this.nof;
+	}
+	
+	public int getnov() {
+		
+		return this.nov;
+	}
+	
+	public String[] getVideosArray() {
+		
+		return this.videos;
+	}
+	
 	public void follow(Follower f) {
 
 		this.followers[this.nof] = f;
@@ -93,6 +108,23 @@ public class Channel {
 		this.followers = fs;
 		f.channels = cs;
 
+	}
+	
+	public void addWatchTime(int watchTime) {
+		
+		for ( int i = 0; i<this.nof; i++) {
+			
+			if (this.followers[i].type.equals("Monitor")) {
+				
+				this.followers[i].update(this.name,watchTime);
+				
+			}
+			
+		}
+		
+		
+		
+		
 	}
 
 
